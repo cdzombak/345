@@ -188,13 +188,14 @@
     }
 
     $(() => {
-      setTimeout(go, 2500);
+      const getReadyTime = 2000;
+      setTimeout(go, getReadyTime);
       $('#circle').circleProgress({
         value: 1,
         size: canvasSize,
         fill: "#c9e9f6",
         emptyFill: "#45b3e0",
-        animation: { duration: 2500, easing: "linear" }
+        animation: { duration: getReadyTime, easing: "linear" }
       });
     });
   </script>
