@@ -1,6 +1,7 @@
 <html>
 <head>
   <title>3-4-5 Breathing Exercise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style type="text/css">
     @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
 
@@ -10,21 +11,86 @@
     }
 
     #circle {
-      width: 90%;
-      max-width: 300px;
-      margin: 10% auto;
+      width: 100px;
+      height: 100px;
+      margin: 20% auto;
       position: relative;
-      padding-bottom: 60px;
+      padding-bottom: 40px;
       text-align: center;
     }
 
     #circle .info {
-      font-size: 24px;
+      font-size: 16px;
       color: #45b3e0;
       position: absolute;
       bottom: 0px;
       left: 0;
       right: 0;
+    }
+
+    @media (min-width: 200px) {
+      #circle {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    @media (min-width: 310px) {
+      #circle {
+        width: 260px;
+        height: 260px;
+        padding-bottom: 50px;
+      }
+
+      #circle .info {
+        font-size: 20px;
+      }
+    }
+
+    @media (min-width: 360px) {
+      #circle {
+        width: 290px;
+        height: 290px;
+      }
+
+      #circle .info {
+        font-size: 22px;
+      }
+    }
+
+    @media (min-width: 410px) {
+      #circle {
+        width: 330px;
+        height: 330px;
+        padding-bottom: 60px;
+      }
+
+      #circle .info {
+        font-size: 24px;
+      }
+    }
+
+    @media (min-width: 550px) {
+      #circle {
+        width: 400px;
+        height: 400px;
+      }
+
+      #circle .info {
+        font-size: 26px;
+      }
+    }
+
+    @media (max-height: 300px) {
+      #circle {
+        margin: 5% auto;
+      }
+    }
+
+    @media (max-height: 500px) {
+      #circle {
+        margin: 10% auto;
+      }
     }
 
     #circle canvas {
