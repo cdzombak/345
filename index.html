@@ -36,7 +36,7 @@
 <body>
   <div id="circle">
     <div class="info">
-      get ready...
+      get ready &hellip;
     </div>
   </div>
   <script src="jquery-3.4.1.min.js"></script>
@@ -50,7 +50,7 @@
         // transition 3 -> 4
         currentPhase = 4;
         currentTick = 1;
-        $("#circle .info").text("hold it...");
+        $("#circle .info").html("hold it &hellip;");
 
         $("#circle").circleProgress({
           value: 1,
@@ -63,7 +63,7 @@
         // transition 4 -> 5
         currentPhase = 5;
         currentTick = 1;
-        $("#circle .info").text("let it out");
+        $("#circle .info").text("breathe out");
 
         $("#circle").circleProgress({
           value: 1,
@@ -91,6 +91,21 @@
     }
 
     function go() {
+      $("#circle").on('circle-animation-progress', function(e, p, v) {
+        var obj = $(this).data('circle-progress'),
+            ctx = obj.ctx,
+            s = obj.size,
+            fill = obj.arcFill;
+
+        ctx.save();
+        ctx.font = "bold " + s / 2.5 + "px 'Arimo', sans-serif";
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = fill;
+        ctx.fillText(currentPhase - currentTick + 1, s / 2, s / 2);
+        ctx.restore();
+      });
+
       currentPhase = 3;
       currentTick = 1;
       $("#circle .info").text("breathe in");
